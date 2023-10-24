@@ -1,0 +1,167 @@
+@charset "UTF-8";
+body
+{
+	
+}
+
+*
+{
+	margin:0;
+	padding:0;
+	top:0;
+	bottom:0;
+}
+
+.search-info a:link {color:blue;text-decoration:none;}   /* 未被访问的链接 */
+.search-info a:visited {color:red;text-decoration:none;} /* 已被访问的链接 */
+.search-info a:hover {text-decoration:underline;}   /* 鼠标指针移动到链接上 */
+.search-info a:active {background:#8080ff;}  /* 正在被点击的链接 */
+
+.search-icon a:link {color:gray;}   /* 未被访问的链接 */
+.search-icon a:visited {color:gray;} /* 已被访问的链接 */
+.search-icon a:hover {color:blue;}   /* 鼠标指针移动到链接上 */
+.search-icon a:active {}  /* 正在被点击的链接 */
+
+#normal-search
+{
+	position:fixed;
+	float:left;
+	top:0px;
+	background-color:rgb(220, 220, 220);
+	width:100%;
+	height:110px;
+	font-size:0;
+	z-index:9999;
+}
+
+
+#normal-search .search-input
+{
+	margin-top:38px;
+	outline-color:rgb(245, 255, 250);
+	width:400px;
+	height:30px;
+	border-style:none;
+}
+
+#normal-search .submit-input
+{
+	position:absolute;
+	margin-top:36px;
+}
+
+#search
+{
+	position:fixed;
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	left:0;
+	top:0;
+	bottom:0;	
+}
+
+
+#senior-search
+{
+	position:absolute;
+	left:0;
+	top:110px;
+	buttom:0;
+	width:20%;
+	height:100%;
+	padding-left:0;
+	background-color:rgb(245, 245, 245);
+	float:left;
+	box-shadow: -5px -5px 8px -5px black inset;
+	min-height: max-content;
+	z-index:8888;
+}
+
+#senior-search h3
+{
+	padding-top:30px;
+	padding-left:30%;
+}
+
+#senior-search .fuzzy-search
+{
+	font-size:15px;
+	padding-left:40px;
+	padding-top:30px;
+}
+
+#senior-search .fuzzy-search .input-box
+{
+	width:180px;
+	height:20px;
+}
+
+#senior-search .fuzzy-search .select-box
+{
+	margin-top:10px;
+}
+
+
+#senior-search .fuzzy-search .search-box
+{
+	color:#fff;
+	margin-left:140px;
+	width:50px;
+	height:30px;
+	border-style:none;
+	background-color:rgb(104, 131, 139);
+}
+
+
+#senior-search text
+{
+	padding-left:20%;
+}
+
+#search-result
+{
+	position:absolute;
+	float:right;
+	left:20%;
+	width:100%;
+	top:110px;
+	overflow:auto;
+}
+
+#search-result img
+{
+	width:75px;
+	height:100px;
+}
+
+#search-result p
+{
+	font-size:12px;
+}
+
+#search-result li
+{
+	list-style:none;
+}
+
+#search-result::-webkit-scrollbar { /*滚动条整体样式*/
+	width: 15px; /*高宽分别对应横竖滚动条的尺寸*/
+	height: 4px;
+	scrollbar-arrow-color: red;
+}
+
+#search-result::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 0.2);
+	scrollbar-arrow-color: red;
+}
+
+#search-result::-webkit-scrollbar-track { /*滚动条里面轨道*/
+	-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+	border-radius: 0;
+	background: rgba(0, 0, 0, 0.1);
+}
+

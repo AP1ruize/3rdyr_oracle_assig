@@ -1,0 +1,25 @@
+.cfont{
+	font-family:"STXinwei";
+	font-size:5px;
+	color: #F0F8FF;
+}
+.cfont2{
+	font-family:"Microsoft YaHei";
+	font-size:15px;
+	color: #F0F8FF;
+	text-align:center;
+}
+#inputbox
+{
+	background: #0099CC;
+}
+.zframe{
+	float:left;
+    width:110px;
+    height:90px;
+    margin:20px;
+    font-family:"Microsoft YaHei";
+    color: #996699;
+    font-weight:100;
+    font-size:15px;
+}
