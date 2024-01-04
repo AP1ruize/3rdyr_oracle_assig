@@ -8,9 +8,12 @@ The specific information will be described in the detailed design. The E-R diagr
 ![Annotation 2024-01-03 222155](https://github.com/AP1ruize/oracle_assig/assets/71389528/fd974c1c-3fe0-4f31-8ab4-98d119539311)
 2) UI design
 admin desktop program:
+
 ![Picture2](https://github.com/AP1ruize/oracle_assig/assets/71389528/975cfa18-4ce4-4e3f-ba5a-b448b5a48d57)
 ![Picture3](https://github.com/AP1ruize/oracle_assig/assets/71389528/672d4afe-3ed4-4f76-9844-d21204b06156)
+
 web app for clients:
+
 ![Annotation 2024-01-03 232458](https://github.com/AP1ruize/oracle_assig/assets/71389528/428c7d8e-23d4-4d7b-b173-c7304603de6e)
 ![Annotation 2024-01-03 232530](https://github.com/AP1ruize/oracle_assig/assets/71389528/a03aa3d0-073d-4ceb-a4e5-65c3c28e92d4)
 ![Annotation 2024-01-03 232945](https://github.com/AP1ruize/oracle_assig/assets/71389528/d135e91a-ef55-47c0-9c54-4b50aac7d394)
@@ -21,7 +24,9 @@ In the database design, many advanced functions of the database were in use. In 
 views are also used to simplify book queries (requiring data from two tables), and used blob storage The picture of the book (optional) uses triggers and sequences to realize the self-increment
 of the id. These functions facilitate the implementation of business logic.
 **User information table**
+
 ![image](https://github.com/AP1ruize/oracle_assig/assets/71389528/6dbfe9fd-8586-4482-8c89-0b33f6ab1223)
+
 property    type      explanation
 Userid	   Number	  user id (primary key)
 Password	Varchar2	   password
@@ -34,7 +39,9 @@ This table also adds triggers for auto-increment, which will be mentioned later 
 
 
 **Book information table (using BLOB)**
+
 ![image](https://github.com/AP1ruize/oracle_assig/assets/71389528/e79cc52e-422d-4878-b422-003ab0fd9ea1)
+
 property    type      explanation
 Bookid	   Number	 book id (primary key)
 Bookname	Varchar2	   book name
@@ -45,7 +52,9 @@ Intro	    Varchar2	  introduction
 Pic	        Blob	       image
 
 **Inventory information table**
- ![image](https://github.com/AP1ruize/oracle_assig/assets/71389528/dd3f0aae-efb9-49df-a2ef-3c7e266e3fe0)
+
+![image](https://github.com/AP1ruize/oracle_assig/assets/71389528/dd3f0aae-efb9-49df-a2ef-3c7e266e3fe0)
+
 (Note: The screenshot time of this table is different from that of the book information table, and the database content does not match, which does not mean that no foreign key has been added)
 property    type      explanation
 Bookid	   Number	   book id (foreign key)
@@ -58,7 +67,9 @@ foreign key (bookid)
 references bookinfo(bookid);
 
 **table of reserve**
- ![image](https://github.com/AP1ruize/oracle_assig/assets/71389528/14e2c9ea-3a6e-493f-9236-44c0d16e7b6b)
+
+![image](https://github.com/AP1ruize/oracle_assig/assets/71389528/14e2c9ea-3a6e-493f-9236-44c0d16e7b6b)
+
 (Note: The screenshot time of this table is different from that of the book information table, and the database content does not match, which does not mean that no foreign key has been added)
 property    type      explanation
 Userid	   Number	   user id (foreign key)
@@ -73,7 +84,9 @@ alter table preorder add constraint fk_preorder_bookid
 foreign key (bookid) references bookinfo(bookid);
 
 **table of borrowing**
- ![image](https://github.com/AP1ruize/oracle_assig/assets/71389528/6edc4343-0f9e-4354-8cfe-d79d58a039d9)
+
+![image](https://github.com/AP1ruize/oracle_assig/assets/71389528/6edc4343-0f9e-4354-8cfe-d79d58a039d9)
+
 (Note: The screenshot time of this table is different from that of the book information table, and the database content does not match, which does not mean that no foreign key has been added)
 property    type      explanation
 Userid	   Number	  user id (foreign key)
@@ -90,7 +103,9 @@ alter table loan add constraint fk_loan_bookid
 foreign key (bookid) references bookinfo(bookid);
 
 **table of announcement**
+
 ![image](https://github.com/AP1ruize/oracle_assig/assets/71389528/dbb02dda-6da2-4292-8744-4a0ac782e4e5)
+
 property    type        explanation
 Adminid	    Number	  user id of admin (foreign key)
 Edittime	Timestamp	  time of editting
@@ -103,7 +118,9 @@ alter table notice add constraint fk_notice_userid
 foreign key (adminid) references userinfo(userid);
 
 **table of favorites**
- ![image](https://github.com/AP1ruize/oracle_assig/assets/71389528/f6e99970-fc47-4b21-9da4-1eaaa1c8b262)
+
+![image](https://github.com/AP1ruize/oracle_assig/assets/71389528/f6e99970-fc47-4b21-9da4-1eaaa1c8b262)
+
 (Note: The screenshot time of this table is different from that of the book information table, and the database content does not match, which does not mean that no foreign key has been added)
 property    type      explanation
 Userid	   Number	   user id (foreign key)
